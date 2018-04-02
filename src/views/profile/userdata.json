@@ -1,0 +1,123 @@
+{
+  "username": "Finches",
+  "password": "rasbora101",
+  "avatar": "/static/img/avatar.jpeg",
+  "trips": [
+    {
+      "name": "Iceland",
+      "location": "Reykjavik, Iceland",
+      "geodata": {"lat": "64.128288", "lon": "-21.827774"},
+      "itinerary": [
+        {
+          "day": "Monday",
+          "events": [
+            {"time": "0900", "events": "Wake up and go for breakfast"},
+            {"time": "1200", "events": "Whale watch with Iceland Whale Watching Co."},
+            {"time": "1500", "events": "Lunch at Iceland Lunch Co."},
+            {"time": "1800", "events": "Dinner with friends at Iceland Dinner Co."}
+          ]
+        },
+        {
+          "day": "Tuesday",
+          "events": [
+            {"time": "0900", "events": "Wake up and go for breakfast"},
+            {"time": "1400", "events": "Hiking at Iceland National Park"},
+            {"time": "1800", "events": "Dinner with friends at Iceland Dinner Co."}
+          ]
+        },
+        {
+          "day": "Wednesday",
+          "events": [
+            {"time": "0900", "events": "Wake up and go for breakfast"},
+            {"time": "1200", "events": "Whale watch with Iceland Whale Watching Co."},
+            {"time": "1500", "events": "Lunch at Iceland Lunch Co."},
+            {"time": "1900", "events": "Bar crawl through Reykjavik"}
+          ]
+        },
+        {
+          "day": "Thursday",
+          "events": [
+            {"time": "0900", "events": "Wake up and go for breakfast"},
+            {"time": "1800", "events": "Dinner with friends at Iceland Dinner Co."}
+          ]
+        }
+      ],
+      "packinglists": [
+        {
+          "name": "Carry-on",
+          "list": ["Hiking boots", "Socks", "Deodorant", "Toothbrush", "Travel-size toothpaste", "Wallet", "Passport"]
+        },
+        {
+          "name": "Checked Bag #1",
+          "list": ["Long sleeve shirt", "Parka", "Laptop", "3 Pairs of Jeans", "1 Pair of Shorts", "Underwear"]
+        },
+        {
+          "name": "Checked Bag #2",
+          "list": ["Winter coat", "Light Jacket", "Camera", "Telephoto lenses", "Phone Charger", "Travel shampoos"]
+        }
+      ],
+      "gallery": [
+        {"src": "/static/img/iceland/iceland.jpg", "alt": "This is our first picture from iceland. It was cold today."},
+        {"src": "/static/img/iceland/iceland1.jpeg", "alt": "This is our second picture from iceland."},
+        {"src": "/static/img/iceland/iceland2.jpg", "alt": "Our third picture upload from Reykjavik."},
+        {"src": "/static/img/iceland/iceland3.jpeg", "alt": "This is another picture from iceland."},
+        {"src": "/static/img/iceland/iceland4.jpeg", "alt": "Just awesome."},
+        {"src": "/static/img/iceland/iceland5.jpeg", "alt": "It was warmer today."},
+        {"src": "/static/img/iceland/iceland6.jpeg", "alt": "Look at how awesome this place is."},
+        {"src": "/static/img/iceland/iceland7.jpeg", "alt": "Check this out."},
+        {"src": "/static/img/iceland/iceland8.jpeg", "alt": "Can I just move here?"},
+        {"src": "/static/img/iceland/iceland9.jpg", "alt": "Love this place."},
+        {"src": "/static/img/iceland/iceland10.jpg", "alt": "I was sick today, but the views are still amazing!"},
+        {"src": "/static/img/iceland/iceland11.jpg", "alt": "Its great here."},
+        {"src": "/static/img/iceland/iceland12.jpeg", "alt": "Another picture of the beautiful landscapes."},
+        {"src": "/static/img/iceland/iceland13.jpg", "alt": "This is our last picture from iceland. It was a great trip!"}
+      ]
+    },
+    {
+      "name": "Oregon",
+      "location": "Portland, Oregon",
+      "geodata": {"lat": "45.543066", "lon": "-122.9346037"},
+      "itinerary": [
+        {
+          "day": "Friday",
+          "events": [
+            {"time": "0900", "events": "Wake up and go for breakfast"},
+            {"time": "1100", "events": "Hiking near Portland"},
+            {"time": "1400", "events": "Lunch at Portland Lunch Factory"},
+            {"time": "1700", "events": "Dinner with my friend downtown"}
+          ]
+        },
+        {
+          "day": "Saturday",
+          "events": [
+            {"time": "0900", "events": "Wake up and go for breakfast"},
+            {"time": "1200", "events": "More hiking in Oregon's state parks"},
+            {"time": "1700", "events": "Rock-climbing"}
+          ]
+        },
+        {
+          "day": "Sunday",
+          "events": [
+            {"time": "1000", "events": "Wake up and go for breakfast"},
+            {"time": "1300", "events": "Start packing up my things to go back home"},
+            {"time": "1400", "events": "Meet friend for late lunch"},
+            {"time": "2000", "events": "Bar crawl through Portland"}
+          ]
+        }
+      ],
+      "packinglists": [
+        {
+          "name": "Carry-on",
+          "list": ["Hiking boots", "Socks", "Deodorant", "Toothbrush", "Travel-size toothpaste", "Wallet", "Underwear", "3 Shirts", "3 Pairs of Pants"]
+        }
+      ],
+      "gallery": [
+        {"src": "/static/img/oregon/oregon.jpeg", "alt": "This is my first picture of Portland. It was beautiful today."},
+        {"src": "/static/img/oregon/oregon1.jpeg", "alt": "This is my second picture from Oregon."},
+        {"src": "/static/img/oregon/oregon2.jpeg", "alt": "Our third picture upload from Oregon."},
+        {"src": "/static/img/oregon/oregon3.jpeg", "alt": "This is another picture from Oregon."},
+        {"src": "/static/img/oregon/oregon4.jpeg", "alt": "Amazing views."}
+      ]
+    }
+  ]
+}
