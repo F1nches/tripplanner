@@ -1,15 +1,20 @@
 <template>
   <div class="itinerary profile-component">
-    <h1>{{title}}</h1>
+    <h1><span class="icon flaticon-map"></span>{{title}}</h1>
     <div class="day" v-for="day in itinerary">
       <div class="day-container" @click="populateEvents(day.day)">
         {{day.day}}
       </div>
     </div>
     <div class="events">
-      <ul>
-        <li v-for="events in currentDay">{{events.time}}: {{events.events}}</li>
-      </ul>
+      <div class="scrollable" v-bar="{
+      preventParentScroll: true,
+      scrollThrottle: 30,
+  }">
+        <ul>
+          <li v-for="events in currentDay">{{events.time}}: {{events.events}}</li>
+        </ul>
+      </div>
       <form class="bottom-container">
         <v-timepicker v-model="eventTime"></v-timepicker>
         <input v-if="currentDay" type="text" class="add-event" placeholder="Add new event..." v-model="addEvent">
@@ -64,6 +69,10 @@ export default {
   text-transform: uppercase;
   font-size: 10px;
   font-weight: 800;
+}
+
+.day:first-of-type {
+  margin-left: 0;
 }
 
 .day:hover {

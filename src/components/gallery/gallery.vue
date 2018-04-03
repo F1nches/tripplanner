@@ -1,8 +1,8 @@
 <template>
   <div class="gallery profile-component">
-    <h1>{{title}}</h1>
+    <h1><span class="icon flaticon-photo-camera"></span>{{title}}</h1>
     <div class="photos">
-      <div class="image" v-for="image in images" v-bind:style="'background: url('+image+') no-repeat center center/cover'" @click="fullImage(image)"></div>
+      <div class="image" v-for="image in gallery" v-bind:style="'background: url('+image.src+') no-repeat center center/cover'" @click="fullImage(image.src)"></div>
     </div>
     <div v-bind:class="{'show': showFull}" class="full-photo" id="full-photo" @click="showFull = !showFull">
       <div>
@@ -15,53 +15,14 @@
 <script>
 export default {
   name: 'Gallery',
+  props: ['gallery'],
   data () {
     return {
       title: 'Trip Photos',
       currentImage: '',
       showFull: false,
-      images: [
-        '/static/img/iceland/iceland.jpg',
-        '/static/img/iceland/iceland1.jpeg',
-        '/static/img/iceland/iceland2.jpg',
-        '/static/img/iceland/iceland3.jpeg',
-        '/static/img/iceland/iceland4.jpeg',
-        '/static/img/iceland/iceland5.jpeg',
-        '/static/img/iceland/iceland6.jpeg',
-        '/static/img/iceland/iceland7.jpeg',
-        '/static/img/iceland/iceland8.jpeg',
-        '/static/img/iceland/iceland9.jpg',
-        '/static/img/iceland/iceland10.jpg',
-        '/static/img/iceland/iceland11.jpg',
-        '/static/img/iceland/iceland12.jpeg',
-        '/static/img/iceland/iceland13.jpg',
-        '/static/img/iceland/iceland.jpg',
-        '/static/img/iceland/iceland1.jpeg',
-        '/static/img/iceland/iceland2.jpg',
-        '/static/img/iceland/iceland3.jpeg',
-        '/static/img/iceland/iceland4.jpeg',
-        '/static/img/iceland/iceland5.jpeg',
-        '/static/img/iceland/iceland6.jpeg',
-        '/static/img/iceland/iceland7.jpeg',
-        '/static/img/iceland/iceland8.jpeg',
-        '/static/img/iceland/iceland9.jpg',
-        '/static/img/iceland/iceland10.jpg',
-        '/static/img/iceland/iceland11.jpg',
-        '/static/img/iceland/iceland12.jpeg',
-        '/static/img/iceland/iceland13.jpg',
-      ]
     }
   },
-  // mounted: function() {
-  //     document.addEventListener('click', function(event) {
-  //       var element = document.getElementById('full-image');
-  //       var isClickInside = element.contains(event.target);
-  //       if (!isClickInside) {
-  //         //the click was outside the specifiedElement, do something
-  //         this.showFull = false;
-  //       }
-  //   });
-  // },
   methods: {
     fullImage: function(image) {
       this.currentImage = image;

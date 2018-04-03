@@ -12,8 +12,11 @@
           "day": "Monday",
           "events": [
             {"time": "0900", "events": "Wake up and go for breakfast"},
-            {"time": "1200", "events": "Whale watch with Iceland Whale Watching Co."},
-            {"time": "1500", "events": "Lunch at Iceland Lunch Co."},
+            {"time": "1000", "events": "Something to do."},
+            {"time": "1200", "events": "Lunch at Iceland Lunch Co."},
+            {"time": "1400", "events": "Siteseeing the city"},
+            {"time": "1500", "events": "Whale watch with Iceland Whale Watching Co."},
+            {"time": "1700", "events": "Lunch at Iceland Lunch Co."},
             {"time": "1800", "events": "Dinner with friends at Iceland Dinner Co."}
           ]
         },

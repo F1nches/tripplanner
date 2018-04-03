@@ -1,16 +1,16 @@
 <template>
   <div class="profile-container container-fluid">
     <div class="row">
-      <div class="col-md-2 sidebar-container position-fixed"><app-sidebar></app-sidebar></div>
+      <div class="col-md-2 sidebar-container position-fixed"><app-sidebar v-bind:tripNames="userTrips"></app-sidebar></div>
       <div class="col-md-10 row profile-content-wrapper offset-md-2">
-        <div class="col-md-12 trip-selector"><app-selector></app-selector></div>
-        <div class="col-md-4"><app-packing v-bind:packingLists="userData.trips[0].packinglists"></app-packing></div>
-        <div class="col-md-4"><app-weather v-bind:geodata="userData.trips[0].geodata"></app-weather></div>
+        <div class="col-md-12 trip-selector"><app-selector v-bind:trips="userData.trips" @selectedTrip="onChildChange"></app-selector></div>
+        <div class="col-md-4"><app-packing v-bind:packingLists="selectedTripData.packinglists"></app-packing></div>
+        <div class="col-md-4"><app-weather v-bind:geodata="selectedTripData.geodata" v-bind:location="selectedTripData.location"></app-weather></div>
         <div class="col-md-4"><app-travelinfo></app-travelinfo></div>
-        <div class="col-md-6"><app-itinerary v-bind:itinerary="userData.trips[0].itinerary"></app-itinerary></div>
+        <div class="col-md-6"><app-itinerary v-bind:itinerary="selectedTripData.itinerary"></app-itinerary></div>
         <div class="col-md-6"><app-chat></app-chat></div>
         <div class="col-md-4"><app-recommendations></app-recommendations></div>
-        <div class="col-md-8"><app-gallery></app-gallery></div>
+        <div class="col-md-8"><app-gallery v-bind:gallery="selectedTripData.gallery"></app-gallery></div>
       </div>
     </div>
   </div>
@@ -46,11 +46,30 @@ export default {
   data () {
     return {
       msg: 'Welcome to TripPlanner',
-      userData: userData
+      userData: userData,
+      selectedTripName: '',
+      selectedTripData: {},
+      userTrips: []
     }
   },
   mounted: function() {
-    console.log(userData);
+    for (var i=0; i<userData.trips.length; i++) {
+      this.userTrips.push(this.userData.trips[i].name);
+    }
+    
+  },
+  methods: {
+    onChildChange(value) {
+      if (value) {
+        this.selectedTripName = value;
+        for (var i=0; i<userData.trips.length; i++) {
+          if (userData.trips[i].name === this.selectedTripName) {
+            this.selectedTripData = userData.trips[i];
+          }
+        }
+      }
+      console.log('Parent: ' + this.selectedTripData.location);
+    }
   }
 }
 </script>
@@ -71,7 +90,7 @@ export default {
   right: 0;
   width: 100%;
   height: 100%;
-  opacity: 0.05;
+  opacity: 0.04;
   background: url('/static/img/topography.svg') no-repeat center center/cover;
 }
 .profile-content-wrapper > div {

@@ -5,12 +5,23 @@ html, body {
   padding: 0;
   overflow-x: hidden;
   color: #fff;
+  font-family: 'nunito', sans-serif;
+  font-weight: 700;
 }
 
 ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+  color: #e2e4ff;
 }
 
 #trip.v-select .dropdown-toggle {
@@ -38,7 +49,7 @@ ul {
   font-family: 'Open Sans', sans-serif;
   font-weight: 800;
   letter-spacing: 2px;
-  border-bottom: 1px solid #ddd;
+  background: #f1f1f1;
 }
 
 .bottom-container {
@@ -48,4 +59,86 @@ ul {
   width: calc(100% - 20px);
   background: #fff;
   box-sizing: border-box;
+}
+
+.btn {
+  padding: 2px 7px;
+}
+
+.vuebar-element {
+  height: 250px;
+  width: 100%;
+  max-width: 500px;
+  background: #dfe9fe;
+}
+
+.icon {
+  background: #24253C;
+  border-radius: 50%;
+  padding: 5px;
+  color: #18F4CE;
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+.sidebar-icon {
+  background: #2e304c;
+  border-radius: 50%;
+  padding: 1px;
+  color: #6e7191;
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+/** Scrollbars **/
+
+.scrollable {
+  height: 210px;
+  overflow-y: scroll;
+}
+
+.vb > .vb-dragger {
+    z-index: 4;
+    width: 12px;
+    right: 0;
+}
+
+.vb > .vb-dragger > .vb-dragger-styler {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform: rotate3d(0,0,0,0);
+    transform: rotate3d(0,0,0,0);
+    -webkit-transition:
+        background-color 100ms ease-out,
+        margin 100ms ease-out,
+        height 100ms ease-out;
+    transition:
+        background-color 100ms ease-out,
+        margin 100ms ease-out,
+        height 100ms ease-out;
+    background-color: #24253C;
+    margin: 5px 5px 5px 0;
+    border-radius: 20px;
+    height: calc(100% - 10px);
+    display: block;
+}
+
+.vb.vb-scrolling-phantom > .vb-dragger > .vb-dragger-styler {
+    background-color: #24253C;
+}
+
+.vb > .vb-dragger:hover > .vb-dragger-styler {
+    background-color: #24253C;
+    margin: 0px;
+    height: 100%;
+}
+
+.vb.vb-dragging > .vb-dragger > .vb-dragger-styler {
+    background-color: #24253C;
+    margin: 0px;
+    height: 100%;
+}
+
+.vb.vb-dragging-phantom > .vb-dragger > .vb-dragger-styler {
+    background-color: #24253C;
 }

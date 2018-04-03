@@ -15,7 +15,8 @@
     "vue-axios": "^2.1.1",
     "vue-router": "^3.0.1",
     "vue-select": "^2.4.0",
-    "vue2-timepicker": "^0.1.4"
+    "vue2-timepicker": "^0.1.4",
+    "vuebar": "0.0.18"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",

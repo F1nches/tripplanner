@@ -1,6 +1,6 @@
 <template>
   <div class="weather profile-component">
-    <h1 @click="getWeather()">{{title}}</h1>
+    <h1 @click="getWeather()"><span class="icon flaticon-sea"></span>{{title}}</h1>
     <div class="current">
       <div class="location">{{location}}</div>
       <div class="current-container">
@@ -41,7 +41,7 @@
 
 export default {
   name: 'Weather',
-  props: ['geodata'],
+  props: ['geodata', 'location'],
   data () {
     return {
       title: 'Weather',

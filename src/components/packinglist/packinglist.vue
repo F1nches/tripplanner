@@ -1,6 +1,6 @@
 <template>
   <div class="packing-list profile-component">
-    <h1>{{title}}</h1>
+    <h1><span class="icon flaticon-travel-1"></span>{{title}}</h1>
     <div class="packing-lists">
       <div class="packing-list-btn" v-for="list in packingLists">
         <div class="packing-list-btn-container" @click="populateList(list.name)">
@@ -8,12 +8,18 @@
         </div>
       </div>
     </div>
-
-    <ul class="packing-list-ul">
-      <li v-for="item in selectedList">{{item}}</li>
-    </ul>
+    <div class="scrollable" v-bar="{
+    preventParentScroll: true,
+    scrollThrottle: 30,
+}">
+      <div>
+        <ul class="packing-list-ul">
+          <li v-for="item in selectedList">{{item}}</li>
+        </ul>
+      </div>
+    </div>
     <div class="add-item-container bottom-container">
-      <input type="text" class="full-width">
+      <input type="text" class="full-width" placeholder="Add new item...">
       <div class="btn btn-primary">Submit</div>
     </div>
   </div>
@@ -28,7 +34,6 @@ export default {
     return {
       title: 'Packing Lists',
       location: "Reykjavik, Iceland",
-      packingListNames: [],
       selected: '',
       selectedList: []
     }
@@ -47,8 +52,10 @@ export default {
       for (var i=0; i<this.packingLists.length; i++) {
         if (this.packingLists[i].name === listName) {
           this.selected = this.packingLists[i].name;
+          this.selectedList = this.packingLists[i].list;
         }
       }
+      console.log(this.packingLists);
     }
   }
 }
@@ -88,14 +95,14 @@ export default {
 }
 
 .add-item-container input {
-  width: 50%;
+  width: 80%;
 }
 .add-item-container .btn {
   float: right;
 }
 
 .add-item-container {
-  
+
 }
 
 </style>

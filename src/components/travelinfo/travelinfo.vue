@@ -1,6 +1,6 @@
 <template>
   <div class="chat profile-component">
-    <h1>{{title}}</h1>
+    <h1><span class="icon flaticon-tickets"></span>{{title}}</h1>
   </div>
 </template>
 

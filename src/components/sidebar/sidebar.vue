@@ -17,11 +17,20 @@
         </router-link>
       </div>
     </div>
-    <button class="btn btn-primary btn-block">My Trips</button>
-    <button class="btn btn-primary btn-block">Add New Trip</button>
-    <button class="btn btn-primary btn-block">Remove Trip</button>
-    <button class="btn btn-primary btn-block">Compose TripLink</button>
-    <button class="btn btn-primary btn-block">Sign Out</button>
+    <ul>
+      <li v-on:click="showSub = !showSub">
+        <router-link to="profile">
+          <span class="sidebar-icon flaticon-hiker"></span>My Trips
+        </router-link>
+        <div class="dropdown-container" v-bind:class="{ show: showSub }">
+          <a href="#" v-for="trip in tripNames">{{trip}}</a>
+        </div>
+      </li>
+      <li><router-link to="profile"><span class="sidebar-icon flaticon-travel-5"></span>Add New Trip</router-link></li>
+      <li><router-link to="profile"><span class="sidebar-icon flaticon-travel-1"></span>Remove Trip</router-link></li>
+      <li><router-link to="profile"><span class="sidebar-icon flaticon-travel-3"></span>Compose TripLink</router-link></li>
+      <li><router-link to="profile"><span class="sidebar-icon flaticon-door"></span>Sign Out</router-link></li>
+    </ul>
   </div>
 </template>
 
@@ -29,13 +38,24 @@
 
 export default {
   name: 'Sidebar',
+  props: ['tripNames'],
   data () {
     return {
       logo: '/static/img/tripplanner-alpha-logo.svg',
       user: {
         name: 'Fincherr',
         avatar: 'https://images.pexels.com/photos/709068/pexels-photo-709068.jpeg?w=1260&h=750&dpr=2&auto=compress&cs=tinysrgb'
-      }
+      },
+      icons: ['/static/img/icons/hiker.svg', '/static/img/icons/map.svg', '/static/img/icons/newtrip.svg', '/static/img/icons/packing.svg', '/static/img/icons/remove.svg', '/static/img/icons/travelplans.svg'],
+      showSub: false
+    }
+  },
+  mounted: function() {
+    this.getTripNames();
+  },
+  methods: {
+    getTripNames: function() {
+      console.log(this.tripNames);
     }
   }
 }
@@ -64,5 +84,31 @@ export default {
 
   .logo img, .user-avatar a img {
     width: 100%;
+  }
+  a {
+    color: #e2e4ff;
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    display: block;
+    transition: 0.2s;
+  }
+  a:hover {
+    color: #6e7191;
+    background: #2e304c;
+    transition: 0.2s;
+  }
+
+  .dropdown-container {
+    height: 0;
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  .dropdown-container.show {
+    height: 100%;
+    visibility: visible;
+    opacity: 1;
+    transition: 0.3s;
   }
 </style>
