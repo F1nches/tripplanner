@@ -94,15 +94,19 @@ export default {
   text-align: center;
 }
 .current-icon > img {
-  width: 50px;
-  margin: 25px;
+  width: 80px;
+  margin: 25px 0;
 }
 .forecast .day {
   display: inline-block;
   height: 100px;
   width: 19%;
 }
-
+.forecast {
+  position: absolute;
+  bottom: 0;
+  width: calc(100% - 20px);
+}
 .forecast img {
   width: 40px;
 }

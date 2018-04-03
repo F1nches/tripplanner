@@ -92,6 +92,7 @@ export default {
     height: 100%;
     display: block;
     transition: 0.2s;
+    padding: 5px;
   }
   a:hover {
     color: #6e7191;

@@ -1,6 +1,10 @@
 <template>
   <div class="gallery profile-component">
     <h1><span class="icon flaticon-photo-camera"></span>{{title}}</h1>
+    <div class="scrollable" v-bar="{
+    preventParentScroll: true,
+    scrollThrottle: 30,
+    }">
     <div class="photos">
       <div class="image" v-for="image in gallery" v-bind:style="'background: url('+image.src+') no-repeat center center/cover'" @click="fullImage(image.src)"></div>
     </div>
@@ -9,6 +13,7 @@
         <img v-bind:src="currentImage" id="full-image"/>
       </div>
     </div>
+  </div>
   </div>
 </template>
 
@@ -34,8 +39,8 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.gallery {
-  overflow-y: scroll;
+.scrollable {
+  height: 295px;
 }
 .image {
   width: 150px;
