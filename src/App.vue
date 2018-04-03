@@ -1,6 +1,8 @@
 <template>
   <div id="app">
+    <div v-bar>
     <router-view/>
+    </div>
   </div>
 </template>
 
@@ -19,5 +21,8 @@ export default {
   #app {
     width: 100%;
     height: 100%;
+  }
+  #app > div {
+    height: 100vh;
   }
 </style>
